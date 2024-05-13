@@ -1,11 +1,11 @@
-import i18next from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector'
-import I18NextHttpBackend from 'i18next-http-backend'
+import i18next from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
+import I18NextHttpBackend from 'i18next-http-backend';
 
 declare module 'i18next' {
   interface CustomTypeOptions {
-    returnNull: false
+    returnNull: false;
   }
 }
 
@@ -15,15 +15,15 @@ void i18next
   .use(I18NextHttpBackend)
   .init({
     fallbackLng: 'en',
-    supportedLngs: ['en'],
+    supportedLngs: ['en', 'fr'],
     ns: [],
     returnNull: false,
     backend: {
       loadPath:
         import.meta.env.BASE_URL != '/spa'
           ? `${import.meta.env.BASE_URL}locales/{{lng}}/{{ns}}.json`
-          : `/spa/locales/{{lng}}/{{ns}}.json`
-    }
-  })
+          : `/spa/locales/{{lng}}/{{ns}}.json`,
+    },
+  });
 
-export default i18next
+export default i18next;
