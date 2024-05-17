@@ -126,3 +126,5 @@ bower_components/
 src/vendor/
 dist/
 dev-env/dvconfig.py
+dev-env/dvconfig.py
+.env.example
