@@ -49,7 +49,7 @@ export function Header() {
           <Navbar.Link href={`${BASE_URL}${Route.SIGN_UP}`}>{t('signUp')}</Navbar.Link>
         </>
       )}
-      <LanguageSwitcher /> {/* Add the LanguageSwitcher component */}
+      <LanguageSwitcher /> 
     </Navbar>
   )
 }
