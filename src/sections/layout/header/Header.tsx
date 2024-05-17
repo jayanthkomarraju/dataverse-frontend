@@ -5,7 +5,7 @@ import { Route } from '../../Route.enum'
 import { useSession } from '../../session/SessionContext'
 import { useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../../../config'
-import LanguageSwitcher from './LanguageSwitcher' // Import the LanguageSwitcher component
+import LanguageSwitcher from '../../../../packages/design-system/src/lib/components/language-switcher/LanguageSwitcher' // Import the LanguageSwitcher component
 
 const currentPage = 0
 
