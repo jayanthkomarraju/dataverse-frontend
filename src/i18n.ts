@@ -9,6 +9,29 @@ declare module 'i18next' {
   }
 }
 
+// List of all namespaces corresponding to your translation files
+const namespaces = [
+  'astrophysics',
+  'biomedical',
+  'citation',
+  'citationBlock',
+  'codeMeta20',
+  'collection',
+  'computationalworkflow',
+  'createDataset',
+  'dataset',
+  'file',
+  'files',
+  'footer',
+  'geospatial',
+  'header',
+  'journal',
+  'pageNotFound',
+  'pageNumberNotFound',
+  'pagination',
+  'socialscience'
+];
+
 void i18next
   .use(initReactI18next)
   .use(I18nextBrowserLanguageDetector)
@@ -16,13 +39,20 @@ void i18next
   .init({
     fallbackLng: 'en',
     supportedLngs: ['en', 'fr'],
-    ns: [],
+    ns: namespaces,
+    // defaultNS: 'common', // Optional: Set a default namespace if needed
     returnNull: false,
     backend: {
       loadPath:
-        import.meta.env.BASE_URL != '/spa'
+        import.meta.env.BASE_URL !== '/spa'
           ? `${import.meta.env.BASE_URL}locales/{{lng}}/{{ns}}.json`
           : `/spa/locales/{{lng}}/{{ns}}.json`,
+    },
+    react: {
+      useSuspense: false,
+    },
+    interpolation: {
+      escapeValue: false,
     },
   });
 
