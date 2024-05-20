@@ -1,17 +1,18 @@
 // src/assets/styles/global.scss
 body {
     direction: ltr;
-}
-
-body.rtl {
+  }
+  
+  body.rtl {
     direction: rtl;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-}
-
-body.rtl .container {
-    flex-direction: row-reverse;
-}
+  }
+  
+  .container {
+    // display: flex;
+    flex-direction: row; // This might be causing the issue
+  }
+  
+  body.rtl .container {
+    flex-direction: row-reverse; // This might be causing the issue
+  }
+  
