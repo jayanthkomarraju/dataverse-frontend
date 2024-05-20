@@ -9,10 +9,10 @@ body {
   
   .container {
     // display: flex;
-    flex-direction: row; // This might be causing the issue
+    flex-direction: row; 
   }
   
   body.rtl .container {
-    flex-direction: row-reverse; // This might be causing the issue
+    flex-direction: row-reverse;
   }
   
