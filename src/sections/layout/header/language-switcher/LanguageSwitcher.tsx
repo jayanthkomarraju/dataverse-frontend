@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '@iqss/dataverse-design-system';
 import { useContext } from 'react';
-import { LanguageContext } from '../shared/LanguageContext';
+import { LanguageContext } from '../../../../shared/LanguageContext';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
