@@ -1,12 +1,17 @@
+// LanguageSwitcher.tsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Navbar } from '@iqss/dataverse-design-system';
+import { useContext } from 'react';
+import { LanguageContext } from '../shared/LanguageContext';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
+  const { setLanguage } = useContext(LanguageContext);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+    setLanguage(lng);
   };
 
   const getLanguageName = (lng: string) => {
