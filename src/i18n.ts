@@ -38,7 +38,7 @@ void i18next
   .use(I18NextHttpBackend)
   .init({
     fallbackLng: 'en',
-    supportedLngs: ['en', 'fr'],
+    supportedLngs: ['en', 'fr', 'ar'], 
     ns: namespaces,
     // defaultNS: 'common', // Optional: Set a default namespace if needed
     returnNull: false,
