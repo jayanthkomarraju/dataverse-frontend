@@ -16,7 +16,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState('en');
 
   useEffect(() => {
-    document.body.classList.toggle('rtl', language === 'ar');
+    if (language === 'ar') {
+      document.body.classList.add('rtl');
+    } else {
+      document.body.classList.remove('rtl');
+    }
     i18n.changeLanguage(language);
   }, [language]);
 
