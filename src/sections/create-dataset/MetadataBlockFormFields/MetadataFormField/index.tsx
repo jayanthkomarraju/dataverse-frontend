@@ -10,6 +10,7 @@ import {
 import { Vocabulary } from './Fields/Vocabulary'
 import { VocabularyMultiple } from './Fields/VocabularyMultiple'
 import styles from './index.module.scss'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   metadataFieldInfo: MetadataField
@@ -24,6 +25,7 @@ export const MetadataFormField = ({
   withinMultipleFieldsGroup = false,
   compoundParentName
 }: Props) => {
+  const { t } = useTranslation('metadataBlock')  // Using translation hook for 'metadataBlock'
   const {
     name,
     type,
@@ -65,7 +67,7 @@ export const MetadataFormField = ({
   if (isSafeCompound) {
     return (
       <Form.GroupWithMultipleFields
-        title={title}
+        title={t(title)}  // Using translation here
         message={description}
         required={isRequired}
         withDynamicFields={false}>
@@ -92,7 +94,7 @@ export const MetadataFormField = ({
     if (multiple) {
       return (
         <VocabularyMultiple
-          title={title}
+          title={t(title)}  // Using translation here
           name={builtFieldName}
           displayName={displayName}
           description={description}
@@ -112,7 +114,9 @@ export const MetadataFormField = ({
             controlId={name}
             required={isRequired}
             as={withinMultipleFieldsGroup ? Col : Row}>
-            <Form.Group.Label message={description}>{title}</Form.Group.Label>
+            <Form.Group.Label message={description}>
+              {t(title)}  {/* Using translation here */}
+            </Form.Group.Label>
             <Vocabulary
               onChange={onChange}
               isInvalid={invalid}
@@ -137,7 +141,9 @@ export const MetadataFormField = ({
             controlId={name}
             required={isRequired}
             as={withinMultipleFieldsGroup ? Col : undefined}>
-            <Form.Group.Label message={description}>{title}</Form.Group.Label>
+            <Form.Group.Label message={description}>
+              {t(title)}  {/* Using translation here */}
+            </Form.Group.Label>
 
             <>
               {type === TypeMetadataFieldOptions.Textbox ? (

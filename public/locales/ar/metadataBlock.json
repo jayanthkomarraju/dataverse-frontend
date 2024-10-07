@@ -1,0 +1,24 @@
+{
+    "Title": "العنوان",
+    "Author": "المؤلف",
+    "Name": "الاسم",
+    "Affiliation": "الانتماء",
+    "Identifier Type": "نوع المعرف",
+    "Identifier": "المعرف",
+    "Point of Contact": "نقطة الاتصال",
+    "E-mail": "البريد الإلكتروني",
+    "Description": "الوصف",
+    "Text": "النص",
+    "Date": "التاريخ",
+    "Subject": "الموضوع",
+    "Keyword": "الكلمة المفتاحية",
+    "Term": "المصطلح",
+    "Term URI": "معرف المصطلح",
+    "Controlled Vocabulary Name": "اسم المفردات المسيطر عليها",
+    "Controlled Vocabulary URL": "رابط المفردات المسيطر عليها",
+    "Related Publication": "المنشور ذو الصلة",
+    "Citation": "الاقتباس",
+    "URL": "الرابط",
+    "Notes": "الملاحظات"
+  }
+  
