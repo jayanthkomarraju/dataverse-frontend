@@ -13,12 +13,13 @@ interface Props {
   control: Control<FieldValues, unknown>
   isRequired: boolean
 }
+
 // TODO: Change for a multiple select with search
 export const VocabularyMultiple = forwardRef(function VocabularyMultiple(
   { title, name, displayName, description, options, control, isRequired }: Props,
   ref
 ) {
-  const { t } = useTranslation('createDataset')
+  const { t } = useTranslation('vocabulary') // Updated to use the 'vocabulary' translation pack
   const [checkedOptions, setCheckedOptions] = useState<string[]>([])
 
   const handleChange = (value: string, fieldOnChange: (value: string[]) => void) => {
@@ -48,7 +49,7 @@ export const VocabularyMultiple = forwardRef(function VocabularyMultiple(
             }}
             render={({ field, fieldState: { invalid } }) => (
               <Form.Group.Checkbox
-                label={value}
+                label={t(value)}  // Implemented the translation for options
                 id={`${name}-checkbox-${value}`}
                 value={value}
                 onChange={() => handleChange(value, (newValue) => field.onChange(newValue))}
